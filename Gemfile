@@ -9,4 +9,5 @@ group :development do
   gem 'thin', '1.2.5'
   gem 'shotgun', '0.6'
   gem 'rspec', '1.3'
+  gem 'mocha', '0.9.8'
 end
