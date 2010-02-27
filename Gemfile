@@ -10,4 +10,6 @@ group :development do
   gem 'shotgun', '0.6'
   gem 'rspec', '1.3'
   gem 'mocha', '0.9.8'
+  gem 'cucumber', '0.6.2'
+  gem 'webrat', '0.7.0'
 end

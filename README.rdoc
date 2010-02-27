@@ -1,7 +1,7 @@
 = Sinatra Application Template
 
 A base Sinatra application template. Just fork and build. Yay!
-Includes DataMapper, RSpec, and Haml, all ready to go.
+Includes DataMapper, RSpec, Cucumber and Haml, all ready to go.
 
 == Configuration
 
@@ -15,7 +15,15 @@ Add your specs in <tt>spec</tt>; just require <tt>spec_helper.rb</tt> to pre-con
 
   rake spec
 
+Add Cucumber features in <tt>features</tt>. To run the features:
+
+  rake cucumber
+
+or just
+  
+  cucumber
+
 == Getting Started
 
   rake db:migrate
-  ruby application.rb
+  shotgun application.rb
