@@ -17,7 +17,6 @@ configure do
 
   DataMapper.setup(:default, "sqlite3:///#{File.expand_path(File.dirname(__FILE__))}/#{Sinatra::Base.environment}.db")
 
-  # load models
-  $LOAD_PATH.unshift("#{File.dirname(__FILE__)}/lib")
-  Dir.glob("#{File.dirname(__FILE__)}/lib/*.rb") { |lib| require File.basename(lib, '.*') }
+  # Load all the lib files (models, helpers)
+  Dir["lib/*.rb"].each { |x| load x }
 end
