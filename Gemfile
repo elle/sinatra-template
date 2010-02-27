@@ -1,5 +1,6 @@
 source :gemcutter
 
+gem 'activerecord', '2.3.5'
 gem 'sinatra', '0.9.4'
 gem 'haml', '2.2.20'
 gem 'rack-test', '0.5.3'

@@ -1,3 +1,5 @@
+Dir["lib/*.rb"].each { |x| load x }
+
 require 'spec/rake/spectask'
 require 'cucumber/rake/task'
 
@@ -19,17 +21,16 @@ else
 end
 
 namespace :db do
-  desc 'Auto-migrate the database (destroys data)'
-  task :migrate => :environment do
-    DataMapper.auto_migrate!
-  end
+  desc 'Reset the database (destroys data)'
+  task :reset => [:down, :up]
 
   desc 'Auto-upgrade the database (preserves data)'
-  task :upgrade => :environment do
-    DataMapper.auto_upgrade!
+  task :migrate do
+    Schema.up
   end
-end
-
-task :environment do
-  require 'environment'
+  
+  desc 'Loses all data'
+  task :down do
+    Schema.down
+  end
 end

@@ -27,3 +27,11 @@ end
 Then /^I should not see "([^\"]*)"$/ do |text|
   response_body.should_not contain(text)
 end
+
+Given /^I am viewing "([^\"]*)"$/ do |url|
+  visit(url)
+end
+
+Given /^I have a model named (.+)$/ do |name|
+  Model.create(:name => name)
+end

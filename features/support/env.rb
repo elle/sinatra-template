@@ -37,9 +37,3 @@ class MyWorld
 end
 
 World{MyWorld.new}
-
-DataMapper.setup(:default, "sqlite3::memory:")
-
-Before do
-  DataMapper.auto_migrate!
-end

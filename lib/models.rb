@@ -1,11 +1,11 @@
 # example model file
-class Profile
-  include DataMapper::Resource
+require 'active_record'
 
-  property :id,         Serial
-  property :name,       String  
-  property :created_at, DateTime
-  property :updated_at, DateTime
+class Page < ActiveRecord::Base
+  validates_uniqueness_of :title
+  
+  named_scope :recent, {:limit => 10, :order => 'updated_at DESC'}
+end
 
-  validates_present :name
+class Enquiry < ActiveRecord::Base
 end

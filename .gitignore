@@ -1,0 +1,7 @@
+.DS_Store
+log/*.log
+tmp/*
+yaml
+lib/*.sqlite3
+vendor/cache/*
+webrat.log
