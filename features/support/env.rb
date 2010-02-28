@@ -1,4 +1,4 @@
-gem 'rack-test', '=0.3.0'
+gem 'rack-test', '=0.5.3'
 
 require 'rubygems'
 require 'sinatra'

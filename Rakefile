@@ -34,4 +34,12 @@ namespace :db do
   task :down do
     Schema.down
   end
+  
+  desc 'Bootstraps the database'
+  task :bootstrap do
+    [ ['First Post', 'first-post', 'some body text', 1, 1],
+      ['About us', 'about', 'Lorem ipsum dolor', 0, 1],
+      ['A second post', 'second', 'Something not interesting enough', 1, 0]
+    ].map { |title, slug, body, is_article, is_live| Page.create(:title => title, :slug => slug, :body => body, :is_article => is_article, :is_live => is_live) }
+  end
 end
