@@ -9,9 +9,9 @@
         %li
           %a{ :href => "#content"} skip to content
           %a{ :href => "#nav"} skip to navigation
-      #branding
-        %h1
-          %a{:href => '/'}= SiteConfig.title
-      #content= yield
-      #footer
-        %p#legal= "&mdash; &copy; #{Time.now.strftime('%Y')} #{SiteConfig.author} &mdash;"
+    #branding
+      %h1
+        %a{:href => '/'}= SiteConfig.title
+    #content= yield
+    #footer
+      %p#legal= "&mdash; &copy; #{Time.now.strftime('%Y')} #{SiteConfig.author} &mdash;"

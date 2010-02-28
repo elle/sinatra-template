@@ -1,0 +1,19 @@
+%h1 Contact us
+%form{:method => "enquiry", :action=>"/create"}
+  %p
+    %label Your Name
+    %input{:type=>"text", :name=>"name"}
+  %p
+    %label Your Email
+    %input{:type=>"text", :name=>"email"}
+  %p
+    %label Your Phone
+    %input{:type=>"text", :name=>"phone"}
+  %p
+    %label Your Message
+    %textarea{:type=>"text", :name=>"message"}
+  %p
+    %label Secret Question
+    %input{:type=>"text", :name=>"answer"}
+  %p
+    %button{:type=>"submit"} Send email!

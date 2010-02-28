@@ -1,8 +1,8 @@
 require 'rubygems'
+require 'sinatra'
 require 'haml'
 require 'ostruct'
 require 'active_record'
-require 'sinatra' unless defined?(Sinatra)
 
 configure do
   SiteConfig = OpenStruct.new(
@@ -11,12 +11,11 @@ configure do
     :url_base => 'http://localhost:9393/'
   )
   
-  ActiveRecord::Base.establish_connection(
-    :adapter => 'sqlite3',
-    :database => 'lib/db.sqlite3')
-
-  DataMapper.setup(:default, "sqlite3:///#{File.expand_path(File.dirname(__FILE__))}/#{Sinatra::Base.environment}.db")
-
+  set :views, "#{File.dirname(__FILE__)}/views"
+  
   # Load all the lib files (models, helpers)
   Dir["lib/*.rb"].each { |x| load x }
+
+  # Set default for haml
+  set :haml => {:attr_wrapper => '"', :format => :xhtml}
 end

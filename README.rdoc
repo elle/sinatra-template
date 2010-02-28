@@ -5,9 +5,9 @@ Includes Active Record, RSpec, Cucumber and Haml, all ready to go.
 
 == Configuration
 
-Dependencies and all configuration is done in <tt>environment.rb</tt>. Your database is also set up here. DataMapper will use sqlite3 by default. Tests use the sqlite3-memory adapter (no configuration needed).
+Dependencies and all configuration is done in <tt>environment.rb</tt>. Your database is also set up here. Acrive Record will use sqlite3 by default. Tests use the sqlite3-memory adapter (no configuration needed).
 
-Add your controller actions in <tt>application.rb</tt>. Views for these actions are placed in the <tt>views</tt> directory. Static files, including a stock stylesheet, go in the <tt>public</tt> directory. Models go in the <tt>lib</tt> directory and are auto-loaded. 
+Add your controller actions in <tt>application.rb</tt>. Views for these actions are placed in the <tt>views</tt> directory. Static files, go in the <tt>public</tt> directory. Models and Helpers go in the <tt>lib</tt> directory and are auto-loaded. 
 
 == Testing
 
@@ -25,5 +25,5 @@ or just
 
 == Getting Started
 
-  rake db:migrate
+  rake db:up
   shotgun application.rb

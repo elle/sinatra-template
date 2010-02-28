@@ -7,6 +7,7 @@ Cucumber::Rake::Task.new do |t|
   t.cucumber_opts = %w{--format pretty}
 end
 
+# Run 'rake -T' to see list of generated tasks (from gem root directory)
 task :default => :test
 task :test => :spec
 
@@ -21,11 +22,11 @@ else
 end
 
 namespace :db do
-  desc 'Reset the database (destroys data)'
+  desc 'Reset the database (loses all data)'
   task :reset => [:down, :up]
 
-  desc 'Auto-upgrade the database (preserves data)'
-  task :migrate do
+  desc 'Upgrade the database (preserves data)'
+  task :up do
     Schema.up
   end
   

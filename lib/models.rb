@@ -1,6 +1,6 @@
-# example model file
 require 'active_record'
 
+# example models
 class Page < ActiveRecord::Base
   validates_uniqueness_of :title
   

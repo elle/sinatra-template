@@ -2,6 +2,8 @@
 log/*.log
 tmp/*
 yaml
-lib/*.sqlite3
+db/*.sqlite3
 vendor/cache/*
 webrat.log
+Gemfile.lock
+.bundle/
