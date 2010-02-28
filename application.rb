@@ -24,3 +24,7 @@ end unless Sinatra::Application.environment == :development
 get '/' do
   haml :root
 end
+
+get '/contact/?' do
+  haml :contact
+end
