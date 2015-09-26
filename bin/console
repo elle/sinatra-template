@@ -1,0 +1,9 @@
+#! /usr/bin/env ruby
+# This console script adapted from:rake
+#   http://barkingiguana.com/blog/2009/01/25/scriptconsole-for-your-application/
+
+require "bundler/setup"
+require "byebug"
+
+require "irb"
+IRB.start

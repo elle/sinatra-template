@@ -1,29 +1,35 @@
 = Sinatra Application Template
 
 A base Sinatra application template. Just fork and build. Yay!
-Includes Active Record, RSpec, Cucumber and Haml, all ready to go.
+Includes Active Record, PG, RSpec, Haml, Sass, Bourbon, Neat, all ready to go.
 
-== Configuration
-
-Dependencies and all configuration is done in <tt>environment.rb</tt>. Your database is also set up here. Acrive Record will use sqlite3 by default. Tests use the sqlite3-memory adapter (no configuration needed).
-
-Add your controller actions in <tt>application.rb</tt>. Views for these actions are placed in the <tt>views</tt> directory. Static files, go in the <tt>public</tt> directory. Models and Helpers go in the <tt>lib</tt> directory and are auto-loaded. 
-
-== Testing
-
-Add your specs in <tt>spec</tt>; just require <tt>spec_helper.rb</tt> to pre-configure the test environment. A number of samples are provided (including a sample model, which can be removed). To run the specs:
-
-  rake spec
-
-Add Cucumber features in <tt>features</tt>. To run the features:
-
-  rake cucumber
-
-or just
-  
-  cucumber
 
 == Getting Started
 
-  rake db:up
-  shotgun application.rb
+Set up your database credentials in `config/database.yml`
+
+Then run:
+
+  rake db:create
+  rake db:migrate
+
+Define environment variables in `.env`
+
+  cp .env.example .env
+
+  bundle install
+  bundle exec foreman start
+
+And visit `http://localhost:5000/`
+
+
+== Rake Tasks
+
+You can check what rake tasks are available by running:
+
+  bundle exec rake -T
+
+== Testing
+
+  rake db:migrate RACK_ENV=test
+  ./bin/rspec

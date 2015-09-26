@@ -1,9 +1,2 @@
-.DS_Store
-log/*.log
-tmp/*
-yaml
-db/*.sqlite3
-vendor/cache/*
-webrat.log
-Gemfile.lock
-.bundle/
+.env
+log/*

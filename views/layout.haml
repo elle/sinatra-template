@@ -1,17 +1,22 @@
 !!!
 %html
   %head
-    %title= @title || SiteConfig.title
-    %link{:href => '/stylesheets/master.css', :rel => 'stylesheet', :type => 'text/css'}
+    %title= @title || "Title"
+    %link{ href: "/stylesheets/application.css", rel: "stylesheet", type: "text/css" }
   %body
     #access
       %ul
         %li
-          %a{ :href => "#content"} skip to content
-          %a{ :href => "#nav"} skip to navigation
+          %a{ href: "#content" } skip to content
+          %a{ href: "#nav" } skip to navigation
     #branding
       %h1
-        %a{:href => '/'}= SiteConfig.title
+        %a{ href: "/" } Title
     #content= yield
+
     #footer
-      %p#legal= "&mdash; &copy; #{Time.now.strftime('%Y')} #{SiteConfig.author} &mdash;"
+      %p#legal
+        &mdash;
+        &copy;
+        = Time.current.strftime('%Y')
+        Elle Meredith &mdash;
