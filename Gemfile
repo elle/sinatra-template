@@ -20,7 +20,7 @@ group :development, :test do
   gem "factory_girl"
   gem "launchy"
   gem "rspec"
-  gem "shoulda-matchers", require: false
+  gem "shoulda-matchers", "~>2.8", require: false
 end
 
 group :test do

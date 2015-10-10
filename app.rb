@@ -1,5 +1,4 @@
-require "sinatra"
-require "sinatra/activerecord"
+Bundler.require
 
 if development?
   require "dotenv"
