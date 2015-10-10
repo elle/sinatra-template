@@ -1,5 +1,5 @@
-require "sinatra/activerecord"
 require "sinatra"
+require "sinatra/activerecord"
 
 if development?
   require "dotenv"
@@ -10,6 +10,10 @@ configure do
   set :haml, format: :html5
   set :environment, :development
   enable :logging
+
+  if production?
+    set :scss, style: :compressed, debug_info: false
+  end
 end
 
 helpers do
@@ -40,7 +44,7 @@ error do
 end if production?
 
 get "/application.css" do
-  scss :"stylesheets/application"
+  scss :"/stylesheets/application"
 end
 
 get "/" do

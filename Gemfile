@@ -3,6 +3,7 @@ source "https://rubygems.org"
 gem "dotenv"
 gem "haml"
 gem "pg"
+gem "sass"
 gem "sinatra"
 gem "sinatra-activerecord"
 
