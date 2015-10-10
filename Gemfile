@@ -7,7 +7,7 @@ gem "sass"
 gem "sinatra"
 gem "sinatra-activerecord"
 
-gem "bourbon"
+gem "bourbon", "5.0.0.alpha.0"
 gem "neat"
 
 group :development do

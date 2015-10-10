@@ -8,15 +8,18 @@
       %ul
         %li
           %a{ href: "#content" } skip to content
+        %li
           %a{ href: "#nav" } skip to navigation
     #branding
       %h1
         %a{ href: "/" } Title
-    #content= yield
+    #nav
+    #content
+      = yield
 
     #footer
       %p#legal
         &mdash;
         &copy;
         = Time.current.strftime('%Y')
-        Elle Meredith &mdash;
+        Elle Meredith
