@@ -1,5 +1,7 @@
 Bundler.require
 
+Dir["./lib/**/*.rb"].each { |file| require file }
+
 if development?
   require "dotenv"
   Dotenv.load

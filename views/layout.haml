@@ -7,12 +7,12 @@
     #access
       %ul
         %li
-          %a{ href: "#content" } skip to content
+          = link_to "skip to content", "#content"
         %li
-          %a{ href: "#nav" } skip to navigation
+          = link_to "skip to navigation", "#nav"
     #branding
       %h1
-        %a{ href: "/" } Title
+        = link_to "Title", "#"
     #nav
     #content
       = yield
@@ -21,5 +21,5 @@
       %p#legal
         &mdash;
         &copy;
-        = Time.current.strftime('%Y')
+        = current_year
         Elle Meredith
